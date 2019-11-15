@@ -47,17 +47,6 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>commonweal</title>
       <link href="/commonweal/index.html"/>
       <url>/commonweal/index.html</url>
@@ -85,6 +74,17 @@
       <url>/diary/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="2019-11-13"><a href="#2019-11-13" class="headerlink" title="2019-11-13"></a>2019-11-13</h1><p>以后在这记我的小杂记吧，不算正经日记</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
