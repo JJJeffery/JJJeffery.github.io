@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+  <title>Always Hungry</title>
+  
+  <subtitle>Always Sleeping</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://jfchen.top/"/>
+  <updated>2019-11-15T13:54:12.176Z</updated>
+  <id>http://jfchen.top/</id>
+  
+  <author>
+    <name>Jianfeng Chen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于爬虫的两个得力工具</title>
+    <link href="http://jfchen.top/2019/11/15/%E5%85%B3%E4%BA%8E%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%BE%97%E5%8A%9B%E5%B7%A5%E5%85%B7/"/>
+    <id>http://jfchen.top/2019/11/15/%E5%85%B3%E4%BA%8E%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%BE%97%E5%8A%9B%E5%B7%A5%E5%85%B7/</id>
+    <published>2019-11-15T12:48:04.000Z</published>
+    <updated>2019-11-15T13:54:12.176Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天与某在北京造超导核弹的<a href="https://camuse.top" target="_blank" rel="noopener">小流氓</a>聊及爬虫的时候，发现他被反爬了。</p><p>后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。</p><p>当然我也是个初学者。</p><a id="more"></a><h2 id="get-html-text-url"><a href="#get-html-text-url" class="headerlink" title="get_html_text(url)"></a>get_html_text(url)</h2><p>这是我每只爬虫的第一步，几行非常简单的代码，但也修修补补了好几回才成为今天最顺手的一个工具。</p><p>这也应该是我写的第一段正经工作代码，陪着我撸过无数个网页，测试了无数次。</p><p>可靠性+++++</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_html_text(url):</span><br><span class="line">    try:</span><br><span class="line">        kv = &#123;&apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &apos;</span><br><span class="line">                            &apos;Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134&apos;&#125;</span><br><span class="line">        r = requests.get(url, headers=kv, timeout=30)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        return r.text</span><br><span class="line">    except:</span><br><span class="line">        return &quot;&quot;</span><br></pre></td></tr></table></figure><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p># kv 模拟正常使用浏览器打开网页时，浏览器自动向网站服务器发送的headers，以此应对网站最基本的反爬机制</p><p># 一般来说，只要不是恶意攻击，或者点击速度过快，或者持续点击同一个页面，此方法足以因对大部分网站</p><p># timeout 30s内打不开网页即当做该网页无响应，避免爬虫程序卡在某一步</p><p># 正常打开的网页，本函数返回html</p><p># 无法打开的网页或响应超时的网页，本函数返回为空</p><p>使用时，将网址以文本形式(<em>就是用两个英文引号”括起来，并且一定要加上<code>http://</code>，平时自己使用浏览器时可以不用加，但爬虫程序并不会帮你加</em>)作为参数输入get_html_text(url)</p><h2 id="time-sleep"><a href="#time-sleep" class="headerlink" title="time.sleep()"></a>time.sleep()</h2><p>当你要爬携程、美团这两家的网站的时候，请<strong>千万千万千万</strong>用上这个函数！！！</p><p>来自一个被携程和美团双双封过的人的忠告！</p><p>哪一步都可以省，这一步千万不能省！！</p><p>否则你就会体验到，你连正常的打开美团想买个套餐都不行的滋味。</p><p>显然正经的爬虫应该在任何时候都加这一句。</p><h3 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h3><p>当你使用for语句时，在for循环的最后一行写上这函数，需要提前 <code>import time</code>，这是Python自带的一个库，不用另外安装。</p><p>括号内写上sleep的时间，以秒为单位。</p><h3 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h3><p>如果你问我，这个世界上有没有一个网站我可以全力爬取，不用sleep。</p><p>那我只能回答你，有。</p><p>如果你问我，那你可以不可以告诉我这个网站。</p><p>那我也只能回答你，可以。</p><p>如果你问我，那你为什么不告诉我。</p><p>那样我就只能告诉你了：</p><p>所有以<code>xmu.edu.cn</code>结尾的网站，你随便爬，一只不够放两只，单线程不够你就多线程，唯一能限制你的应该是vpn的速度。</p><p>不过你没事干啥要去爬这个网站呢？</p><p>还有一个网站也是不限制的，但我这边不能说。</p><p>说了我号可能就没了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天与某在北京造超导核弹的&lt;a href=&quot;https://camuse.top&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;小流氓&lt;/a&gt;聊及爬虫的时候，发现他被反爬了。&lt;/p&gt;
+&lt;p&gt;后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。&lt;/p&gt;
+&lt;p&gt;当然我也是个初学者。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="http://jfchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="爬虫" scheme="http://jfchen.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Python" scheme="http://jfchen.top/tags/Python/"/>
+    
+      <category term="编程" scheme="http://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>
