@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jfchen.top/"/>
-  <updated>2019-11-16T04:02:47.234Z</updated>
+  <updated>2019-11-16T04:01:56.841Z</updated>
   <id>http://jfchen.top/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>text comments</title>
-    <link href="http://jfchen.top/2019/11/16/text-comments/"/>
-    <id>http://jfchen.top/2019/11/16/text-comments/</id>
-    <published>2019-11-16T04:02:23.000Z</published>
-    <updated>2019-11-16T04:02:47.234Z</updated>
-    
-    <content type="html"><![CDATA[<p>据说不能留言？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;据说不能留言？&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>关于爬虫的两个得力工具</title>
