@@ -56,15 +56,25 @@
   };
 </script>
 
-  <meta name="description" content="今天与某在北京造超导核弹的小流氓聊及爬虫的时候，发现他被反爬了。 后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。 当然我也是个初学者。">
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "e41728f8"
+    });
+  daovoice('update');
+  </script>
+
+
+  <meta name="description" content="今天与某在北京造超导核弹的小流氓聊及爬虫的时候，发现他被反爬了。 我没有笑。   后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。   当然我也是个初学者。">
 <meta name="keywords" content="爬虫,Python,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于爬虫的两个得力工具">
 <meta property="og:url" content="http:&#x2F;&#x2F;jfchen.top&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E5%85%B3%E4%BA%8E%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%BE%97%E5%8A%9B%E5%B7%A5%E5%85%B7&#x2F;index.html">
 <meta property="og:site_name" content="Always Hungry">
-<meta property="og:description" content="今天与某在北京造超导核弹的小流氓聊及爬虫的时候，发现他被反爬了。 后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。 当然我也是个初学者。">
+<meta property="og:description" content="今天与某在北京造超导核弹的小流氓聊及爬虫的时候，发现他被反爬了。 我没有笑。   后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。   当然我也是个初学者。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-16T04:01:56.841Z">
+<meta property="og:updated_time" content="2019-11-16T08:48:11.753Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://jfchen.top/2019/11/15/%E5%85%B3%E4%BA%8E%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%BE%97%E5%8A%9B%E5%B7%A5%E5%85%B7/">
@@ -258,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-16 12:01:56" itemprop="dateModified" datetime="2019-11-16T12:01:56+08:00">2019-11-16</time>
+                <time title="Modified: 2019-11-16 16:48:11" itemprop="dateModified" datetime="2019-11-16T16:48:11+08:00">2019-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -311,9 +321,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天与某在北京造超导核弹的<a href="https://camusecao.top" target="_blank" rel="noopener">小流氓</a>聊及爬虫的时候，发现他被反爬了。</p>
+        <blockquote>
+<p>今天与某在北京造超导核弹的<a href="https://camusecao.top" target="_blank" rel="noopener">小流氓</a>聊及爬虫的时候，发现他被反爬了。</p>
+<p>我没有笑。</p>
+</blockquote>
+<blockquote>
 <p>后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。</p>
+</blockquote>
+<blockquote>
 <p>当然我也是个初学者。</p>
+</blockquote>
 <a id="more"></a>
 <h2 id="get-html-text-url"><a href="#get-html-text-url" class="headerlink" title="get_html_text(url)"></a>get_html_text(url)</h2><p>这是我每只爬虫的第一步，几行非常简单的代码，但也修修补补了好几回才成为今天最顺手的一个工具。</p>
 <p>这也应该是我写的第一段正经工作代码，陪着我撸过无数个网页，测试了无数次。</p>
