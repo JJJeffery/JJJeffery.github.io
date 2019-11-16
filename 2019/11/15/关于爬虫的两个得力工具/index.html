@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="Always Hungry">
 <meta property="og:description" content="今天与某在北京造超导核弹的小流氓聊及爬虫的时候，发现他被反爬了。 后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。 当然我也是个初学者。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-15T13:54:12.176Z">
+<meta property="og:updated_time" content="2019-11-16T04:01:56.841Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://jfchen.top/2019/11/15/%E5%85%B3%E4%BA%8E%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%BE%97%E5%8A%9B%E5%B7%A5%E5%85%B7/">
@@ -249,10 +249,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-15 20:48:04 / Modified: 21:54:12" itemprop="dateCreated datePublished" datetime="2019-11-15T20:48:04+08:00">2019-11-15</time>
+              <time title="Created: 2019-11-15 20:48:04" itemprop="dateCreated datePublished" datetime="2019-11-15T20:48:04+08:00">2019-11-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-16 12:01:56" itemprop="dateModified" datetime="2019-11-16T12:01:56+08:00">2019-11-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -304,13 +310,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天与某在北京造超导核弹的<a href="https://camuse.top" target="_blank" rel="noopener">小流氓</a>聊及爬虫的时候，发现他被反爬了。</p>
+        <p>今天与某在北京造超导核弹的<a href="https://camusecao.top" target="_blank" rel="noopener">小流氓</a>聊及爬虫的时候，发现他被反爬了。</p>
 <p>后来想起自己刚学爬虫的时候也曾被一些简单的反爬机制制裁过，索性就把我的祖传代码贴出来，供大家参考交流。对于初学者也可以直接复制使用。</p>
 <p>当然我也是个初学者。</p>
 <a id="more"></a>
 <h2 id="get-html-text-url"><a href="#get-html-text-url" class="headerlink" title="get_html_text(url)"></a>get_html_text(url)</h2><p>这是我每只爬虫的第一步，几行非常简单的代码，但也修修补补了好几回才成为今天最顺手的一个工具。</p>
 <p>这也应该是我写的第一段正经工作代码，陪着我撸过无数个网页，测试了无数次。</p>
-<p>可靠性+++++</p>
+<p>可靠性 += 1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_html_text(url):</span><br><span class="line">    try:</span><br><span class="line">        kv = &#123;&apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &apos;</span><br><span class="line">                            &apos;Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134&apos;&#125;</span><br><span class="line">        r = requests.get(url, headers=kv, timeout=30)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        return r.text</span><br><span class="line">    except:</span><br><span class="line">        return &quot;&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p># kv 模拟正常使用浏览器打开网页时，浏览器自动向网站服务器发送的headers，以此应对网站最基本的反爬机制</p>
 <p># 一般来说，只要不是恶意攻击，或者点击速度过快，或者持续点击同一个页面，此方法足以因对大部分网站</p>
@@ -352,6 +358,18 @@
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/16/text-comments/" rel="prev" title="text comments">
+                  text comments <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
       </footer>
     
   </article>
@@ -405,7 +423,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
