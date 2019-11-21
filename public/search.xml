@@ -36,9 +36,31 @@
     
     
     <entry>
+      <title>Something more about J.F. Chen</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<ul><li><strong>洋文名：</strong> 并没有正式的英文名， 暂时JJJeff吧</li><li><strong>所在地：</strong> 福建 厦门</li><li><strong>职业：</strong> <code>前物理学院学生</code>、<code>现MPAcc学生</code></li><li><strong>喜欢的食物：</strong> 这本菜单上的全部东西</li><li><strong>常用编程语言：</strong> <code>Python</code>、<code>Matlab</code>、<code>(朋友你听过51单片机的汇编语言吗？）</code></li><li><strong>兴趣爱好：</strong> 躺着、靠着、给个桌子我也能趴着；平时wzry上上分，关注LOL；小概率隔天跑跑步，以前肯踢足球，现在没鞋了；不想学习时撸两行代码也很快乐</li><li><strong>近期计划：</strong> 求求你让我过了CPA吧</li><li><strong>想学：</strong> <code>Econometrics</code>、<code>建模</code>、<code>统计</code></li><li><strong>想做：</strong> 去成都看大熊猫、去西安看十三朝古都、去潮汕吃火锅、去内蒙古看草原，套马杆也想…</li><li><strong>想吃：</strong> <code>.+</code>（这是一个神奇的正则表达式）</li><li><strong>想说：</strong> 上分喊我、学习喊我、吃饭喊我</li></ul><p>其实我还想说：夏天这么可爱，我想请它吃个饭。如果你有空，你也可以来。</p><p>虽然现在已经到了早晨穿两件都不太够的季节了，但我说这句话的意思就是：<strong>你可以举着勺子开心地跑过来了</strong>。</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>commonweal</title>
+      <link href="/commonweal/index.html"/>
+      <url>/commonweal/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -61,28 +83,6 @@
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Something more about J.F. Chen</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<ul><li><strong>洋文名：</strong> 并没有正式的英文名， 暂时JJJeff吧</li><li><strong>所在地：</strong> 福建 厦门</li><li><strong>职业：</strong> <code>前物理学院学生</code>、<code>现MPAcc学生</code></li><li><strong>喜欢的食物：</strong> 这本菜单上的全部东西</li><li><strong>常用编程语言：</strong> <code>Python</code>、<code>Matlab</code>、<code>(朋友你听过51单片机的汇编语言吗？）</code></li><li><strong>兴趣爱好：</strong> 躺着、靠着、给个桌子我也能趴着；平时wzry上上分，关注LOL；小概率隔天跑跑步，以前肯踢足球，现在没鞋了；不想学习时撸两行代码也很快乐</li><li><strong>近期计划：</strong> 求求你让我过了CPA吧</li><li><strong>想学：</strong> <code>Econometrics</code>、<code>建模</code>、<code>统计</code></li><li><strong>想做：</strong> 去成都看大熊猫、去西安看十三朝古都、去潮汕吃火锅、去内蒙古看草原，套马杆也想…</li><li><strong>想吃：</strong> <code>.+</code>（这是一个神奇的正则表达式）</li><li><strong>想说：</strong> 上分喊我、学习喊我、吃饭喊我</li></ul><p>其实我还想说：夏天这么可爱，我想请它吃个饭。如果你有空，你也可以来。</p><p>虽然现在已经到了早晨穿两件都不太够的季节了，但我说这句话的意思就是：<strong>你可以举着勺子开心地跑过来了</strong>。</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>commonweal</title>
-      <link href="/commonweal/index.html"/>
-      <url>/commonweal/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
