@@ -9,4 +9,4 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /lib/
 
-Sitemap: www.jfchen.top/sitemap.xml
+Sitemap:  https://www.jfchen.top/sitemap.xml
