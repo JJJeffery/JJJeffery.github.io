@@ -45,11 +45,11 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> Python </tag>
             
             <tag> 编程 </tag>
+            
+            <tag> 工具 </tag>
             
         </tags>
       
@@ -100,6 +100,17 @@
     
   
   
+    
+    
+    <entry>
+      <title></title>
+      <link href="/render.html"/>
+      <url>/render.html</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html><head>    <meta charset="UTF-8">    <title>Awesome-pyecharts</title>            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script><link rel="alternate" href="/atom.xml" title="Always Hungry" type="application/atom+xml"></head><body>    <div id="b91dcc6e34cc4d26ba002fccad133d5a" class="chart-container" style="width:900px; height:500px;"></div>    <script>        var chart_b91dcc6e34cc4d26ba002fccad133d5a = echarts.init(            document.getElementById('b91dcc6e34cc4d26ba002fccad133d5a'), 'white', {renderer: 'canvas'});        var option_b91dcc6e34cc4d26ba002fccad133d5a = {    "animation": true,    "animationThreshold": 2000,    "animationDuration": 1000,    "animationEasing": "cubicOut",    "animationDelay": 0,    "animationDurationUpdate": 300,    "animationEasingUpdate": "cubicOut",    "animationDelayUpdate": 0,    "color": [        "#c23531",        "#2f4554",        "#61a0a8",        "#d48265",        "#749f83",        "#ca8622",        "#bda29a",        "#6e7074",        "#546570",        "#c4ccd3",        "#f05b72",        "#ef5b9c",        "#f47920",        "#905a3d",        "#fab27b",        "#2a5caa",        "#444693",        "#726930",        "#b2d235",        "#6d8346",        "#ac6767",        "#1d953f",        "#6950a1",        "#918597"    ],    "series": [        {            "type": "bar",            "name": "\u5546\u5bb6A",            "data": [                5,                20,                36,                10,                75,                90            ],            "barCategoryGap": "20%",            "label": {                "show": true,                "position": "top",                "margin": 8            }        }    ],    "legend": [        {            "data": [                "\u5546\u5bb6A"            ],            "selected": {                "\u5546\u5bb6A": true            }        }    ],    "tooltip": {        "show": true,        "trigger": "item",        "triggerOn": "mousemove|click",        "axisPointer": {            "type": "line"        },        "textStyle": {            "fontSize": 14        },        "borderWidth": 0    },    "xAxis": [        {            "show": true,            "scale": false,            "nameLocation": "end",            "nameGap": 15,            "gridIndex": 0,            "inverse": false,            "offset": 0,            "splitNumber": 5,            "minInterval": 0,            "splitLine": {                "show": false,                "lineStyle": {                    "width": 1,                    "opacity": 1,                    "curveness": 0,                    "type": "solid"                }            },            "data": [                "\u886c\u886b",                "\u7f8a\u6bdb\u886b",                "\u96ea\u7eba\u886b",                "\u88e4\u5b50",                "\u9ad8\u8ddf\u978b",                "\u889c\u5b50"            ]        }    ],    "yAxis": [        {            "show": true,            "scale": false,            "nameLocation": "end",            "nameGap": 15,            "gridIndex": 0,            "inverse": false,            "offset": 0,            "splitNumber": 5,            "minInterval": 0,            "splitLine": {                "show": false,                "lineStyle": {                    "width": 1,                    "opacity": 1,                    "curveness": 0,                    "type": "solid"                }            }        }    ]};        chart_b91dcc6e34cc4d26ba002fccad133d5a.setOption(option_b91dcc6e34cc4d26ba002fccad133d5a);    </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html>]]></content>
+      
+    </entry>
+    
     
     
     <entry>
