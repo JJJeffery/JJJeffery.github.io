@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jfchen.top/about/index.html</loc>
+    
+    <lastmod>2020-02-09T16:11:18.622Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jfchen.top/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2020-02-09T16:10:05.657Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>https://jfchen.top/tags/index.html</loc>
     
     <lastmod>2019-11-15T15:26:22.971Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jfchen.top/about/index.html</loc>
-    
-    <lastmod>2019-11-15T11:41:52.922Z</lastmod>
     
   </url>
   
