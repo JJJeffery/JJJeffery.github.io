@@ -372,7 +372,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-10 00:10:05" itemprop="dateModified" datetime="2020-02-10T00:10:05+08:00">2020-02-10</time>
+                <time title="Modified: 2020-02-10 00:12:41" itemprop="dateModified" datetime="2020-02-10T00:12:41+08:00">2020-02-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -428,39 +428,14 @@
           <blockquote>
 <p>在B站看到一个视频<a href="https://www.bilibili.com/video/av86478875/" target="_blank" rel="noopener">《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》</a>。<br>使用Java编写仿真程序，模拟疫情传播。<br>学习了许多，做个笔记。</p>
 </blockquote>
-<p>源码也已经在Github发布，有兴趣的戳<a href="https://github.com/KikiLetGo/VirusBroadcast" target="_blank" rel="noopener">这里</a>clone。</p>
-<h1 id="1-getInstance"><a href="#1-getInstance" class="headerlink" title="1. getInstance"></a>1. getInstance</h1><p>Java中，一般使用<code>new + 类</code>的方法创建对象。这种可以创建任意数量的对象，且各自独立。</p>
-<p>但在Java仿真模拟中，如果多个class，即多个java程序需要对同一个对象（本例中是全部的Person对象组成的PersonPool这个对象）进行多次操作，可以使用getInstance的方法得到这个唯一恒定对象。</p>
-<p>该方法优点及使用场景：</p>
-<ul>
-<li>全部程序使用同一个对象，避免操作对象选择错误</li>
-<li>对象的定义过程在类的定义过程确定，仿真过程的定义和使用过程完全独立</li>
-<li>基础对象的定义过程，可以与“该对象组合形成的新对象”进行交互（即在定义<code>人</code>的时候，可以定义<code>人</code>与<code>社会</code>进行交互的操作）</li>
-<li>使用场景：仿真程序中，个体形成的整体，可以使用</li>
-</ul>
-<h1 id="2-Constants程序"><a href="#2-Constants程序" class="headerlink" title="2. Constants程序"></a>2. Constants程序</h1><p>该程序没有定义任何操作，只定义了常数。<br>该方法优点：</p>
-<ul>
-<li>可以把与模拟有关的常量提取出来，其他程序使用的时候使用Constants.常量名的方法访问</li>
-<li>验证不同常量对仿真结果的影响时，便于修改常量</li>
-</ul>
-<h1 id="3-可视化"><a href="#3-可视化" class="headerlink" title="3. 可视化"></a>3. 可视化</h1><p>main文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var p = new MyPanel();</span><br><span class="line">var panelThread = new Thread(p);</span><br><span class="line">var frame = new JFrame(&quot;疫情模拟&quot;);</span><br><span class="line"></span><br><span class="line">frame.add(p);</span><br><span class="line">frame.setSize(1000, 800);</span><br><span class="line">frame.setLocationRelativeTo(null);</span><br><span class="line">frame.setVisible(true);</span><br><span class="line">frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">panelThread.start();</span><br></pre></td></tr></table></figure>
-<p>这样可以以windows视窗的形式展示仿真过程及结果。</p>
-<p>MyPanel文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class MyPanel extends JPanel implements Runnable</span><br></pre></td></tr></table></figure>
-<p>MyPanel继承自JPanel父类及Runnable的接口。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public MyPanel() &#123;</span><br><span class="line">    this.setBackground(new Color(0x444444));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>设置窗口背景颜色。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            this.repaint();</span><br><span class="line"></span><br><span class="line">            try &#123;</span><br><span class="line">                Thread.sleep(100);</span><br><span class="line">                System.out.println(worldTime);</span><br><span class="line">                worldTime++;</span><br><span class="line">            &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>设置窗口更新，worldTime是本次仿真中代表时间流逝的变量，一般仿真都会用到。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void paint(Graphics arg0) &#123;</span><br><span class="line">        super.paint(arg0);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>可以理解为，窗口显示的每一帧，显示什么内容。<br>使用<code>arg0.</code>的方法，为每一帧添加内容。<br>先为arg0.setColor，然后使用arg0.drawRect等功能，即可描绘内容<br>若在此操作中有使用到与时间有关的操作，建议新建一个时间参数，仅在此函数中自加，不要使用worldTime。在实践中一般难以捕捉到worldTime为特定值的时候。可能与多线程有关。</p>
-<h1 id="4-static"><a href="#4-static" class="headerlink" title="4. static"></a>4. static</h1><p>定义静止的变量或函数操作。即使没有实例化某一个类，也可以直接通过<code>类名.变量</code>的方法访问。<br>不同于final，final之后该变量不可改，但static可以改，只是这个变量与类共存，而不依赖于某个对象存在。</p>
-<p>使用场景：</p>
-<ul>
-<li>对于一个类的所有实例，该变量总是一样，而且这个类可能会变</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

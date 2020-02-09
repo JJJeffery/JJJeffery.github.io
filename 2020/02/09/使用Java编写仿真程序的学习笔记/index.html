@@ -60,15 +60,15 @@
 
 
 
-  <meta name="description" content="在B站看到一个视频《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》。使用Java编写仿真程序，模拟疫情传播。学习了许多，做个笔记。  源码也已经在Github发布，有兴趣的戳这里clone。 1. getInstanceJava中，一般使用new + 类的方法创建对象。这种可以创建任意数量的对象，且各自独立。 但在Java仿真模拟中，如果多个class，即多个java程序需要对同一个对象">
+  <meta name="description" content="在B站看到一个视频《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》。使用Java编写仿真程序，模拟疫情传播。学习了许多，做个笔记。">
 <meta name="keywords" content="编程,仿真,Java,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Java编写仿真程序的学习笔记-1">
 <meta property="og:url" content="https:&#x2F;&#x2F;jfchen.top&#x2F;2020&#x2F;02&#x2F;09&#x2F;%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="Always Hungry">
-<meta property="og:description" content="在B站看到一个视频《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》。使用Java编写仿真程序，模拟疫情传播。学习了许多，做个笔记。  源码也已经在Github发布，有兴趣的戳这里clone。 1. getInstanceJava中，一般使用new + 类的方法创建对象。这种可以创建任意数量的对象，且各自独立。 但在Java仿真模拟中，如果多个class，即多个java程序需要对同一个对象">
+<meta property="og:description" content="在B站看到一个视频《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》。使用Java编写仿真程序，模拟疫情传播。学习了许多，做个笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-09T16:10:05.657Z">
+<meta property="og:updated_time" content="2020-02-09T16:12:41.428Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jfchen.top/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
@@ -276,7 +276,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-10 00:10:05" itemprop="dateModified" datetime="2020-02-10T00:10:05+08:00">2020-02-10</time>
+                <time title="Modified: 2020-02-10 00:12:41" itemprop="dateModified" datetime="2020-02-10T00:12:41+08:00">2020-02-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -332,6 +332,8 @@
         <blockquote>
 <p>在B站看到一个视频<a href="https://www.bilibili.com/video/av86478875/" target="_blank" rel="noopener">《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》</a>。<br>使用Java编写仿真程序，模拟疫情传播。<br>学习了许多，做个笔记。</p>
 </blockquote>
+<a id="more"></a>
+
 <p>源码也已经在Github发布，有兴趣的戳<a href="https://github.com/KikiLetGo/VirusBroadcast" target="_blank" rel="noopener">这里</a>clone。</p>
 <h1 id="1-getInstance"><a href="#1-getInstance" class="headerlink" title="1. getInstance"></a>1. getInstance</h1><p>Java中，一般使用<code>new + 类</code>的方法创建对象。这种可以创建任意数量的对象，且各自独立。</p>
 <p>但在Java仿真模拟中，如果多个class，即多个java程序需要对同一个对象（本例中是全部的Person对象组成的PersonPool这个对象）进行多次操作，可以使用getInstance的方法得到这个唯一恒定对象。</p>
