@@ -1177,7 +1177,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #1b3d82;
+  background: #d4ff33;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2612,10 +2612,10 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
 }
 * {
-  cursor: url("https://jfchen.top/imags/mouse/light.ico"), auto !important;
+  cursor: url("https://jfchen.top/imags/mouse/plane_light_32.ico"), auto !important;
 }
 :active {
-  cursor: url("https://jfchen.top/imags/mouse/deep.ico"), auto !important;
+  cursor: url("https://jfchen.top/imags/mouse/plane_deep_32.ico"), auto !important;
 }
 #comments .vsys {
   display: none;
