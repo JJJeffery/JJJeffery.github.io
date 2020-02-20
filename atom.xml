@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jfchen.top/"/>
-  <updated>2020-02-20T12:18:48.161Z</updated>
+  <updated>2020-02-20T12:24:38.199Z</updated>
   <id>https://jfchen.top/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="https://jfchen.top/2020/02/20/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%AC%94%E8%AE%B0/"/>
     <id>https://jfchen.top/2020/02/20/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-20T11:52:54.000Z</published>
-    <updated>2020-02-20T12:18:48.161Z</updated>
+    <updated>2020-02-20T12:24:38.199Z</updated>
     
-    <content type="html"><![CDATA[<p>今晚在看生成器，貌似在多次循环中可以节省内存。</p><h1 id="1-构造方法"><a href="#1-构造方法" class="headerlink" title="1. 构造方法"></a>1. 构造方法</h1><p>将原本该返回list的，改为返回单个元素，<br>并在构造函数的时候，将<code>return</code>换为<code>yield</code>。</p><p>若需要生成有限个，在构造函数的时候使用如下方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 0</span><br><span class="line">while n &lt; max_value:</span><br><span class="line">    yield n</span><br><span class="line">    n += 1</span><br></pre></td></tr></table></figure><p>若需要生成无限个，在构造函数的时候使用如下方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 0</span><br><span class="line">while True:</span><br><span class="line">    yield n</span><br><span class="line">    n += 1</span><br></pre></td></tr></table></figure><h1 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h1><p>与普通的直接完整生成一个List不同，含yield的函数访问一次只生成一个元素并返回。<br>构造的生成器函数内有循环，每次访问，运行到yield所在的行后即停止。</p><h1 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3. 使用方法"></a>3. 使用方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for i in gen(5):</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">myGen = gen(5)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line"># 输出结果</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure><h1 id="4-注意"><a href="#4-注意" class="headerlink" title="4. 注意"></a>4. 注意</h1><ul><li><p>有的地方在教生成器的时候，还在用<code>myGen.next()</code>的方法，在新版Python中已换为函数式<code>next(myGen)</code></p></li><li><p>老教材中说，常用用的<code>for i in range(value)</code>，若value值比较大，可能会造成内存浪费，推荐使用生成器xrange的方法，但在新版Python中，已经没有xrange了，xrange的特性已经集成到range中了，也就是说range(10)和range(10000)都不会造成内存浪费</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>今晚在看生成器，貌似在多次循环中可以节省内存。</p><a id="more"></a><h1 id="1-构造方法"><a href="#1-构造方法" class="headerlink" title="1. 构造方法"></a>1. 构造方法</h1><p>将原本该返回list的，改为返回单个元素，<br>并在构造函数的时候，将<code>return</code>换为<code>yield</code>。</p><p>若需要生成有限个，在构造函数的时候使用如下方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 0</span><br><span class="line">while n &lt; max_value:</span><br><span class="line">    yield n</span><br><span class="line">    n += 1</span><br></pre></td></tr></table></figure><p>若需要生成无限个，在构造函数的时候使用如下方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 0</span><br><span class="line">while True:</span><br><span class="line">    yield n</span><br><span class="line">    n += 1</span><br></pre></td></tr></table></figure><h1 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h1><p>与普通的直接完整生成一个List不同，含yield的函数访问一次只生成一个元素并返回。<br>构造的生成器函数内有循环，每次访问，运行到yield所在的行后即停止。</p><h1 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3. 使用方法"></a>3. 使用方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for i in gen(5):</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">myGen = gen(5)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line"># 输出结果</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure><h1 id="4-注意"><a href="#4-注意" class="headerlink" title="4. 注意"></a>4. 注意</h1><ul><li><p>有的地方在教生成器的时候，还在用<code>myGen.next()</code>的方法，在新版Python中已换为函数式<code>next(myGen)</code></p></li><li><p>老教材中说，常用用的<code>for i in range(value)</code>，若value值比较大，可能会造成内存浪费，推荐使用生成器xrange的方法，但在新版Python中，已经没有xrange了，xrange的特性已经集成到range中了，也就是说range(10)和range(10000)都不会造成内存浪费</p></li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;今晚在看生成器，貌似在多次循环中可以节省内存。&lt;/p&gt;
-&lt;h1 id=&quot;1-构造方法&quot;&gt;&lt;a href=&quot;#1-构造方法&quot; class=&quot;headerlink&quot; title=&quot;1. 构造方法&quot;&gt;&lt;/a&gt;1. 构造方法&lt;/h1&gt;&lt;p&gt;将原本该返回list的，改为返回单个元素，
-      
+      &lt;p&gt;今晚在看生成器，貌似在多次循环中可以节省内存。&lt;/p&gt;
     
     </summary>
     
@@ -50,7 +46,7 @@
     <link href="https://jfchen.top/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://jfchen.top/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-09T15:07:18.000Z</published>
-    <updated>2020-02-09T16:12:41.428Z</updated>
+    <updated>2020-02-20T12:24:45.041Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>在B站看到一个视频<a href="https://www.bilibili.com/video/av86478875/" target="_blank" rel="noopener">《计算机仿真程序告诉你为什么现在还没到出门的时候！！！》</a>。<br>使用Java编写仿真程序，模拟疫情传播。<br>学习了许多，做个笔记。</p></blockquote><a id="more"></a><p>源码也已经在Github发布，有兴趣的戳<a href="https://github.com/KikiLetGo/VirusBroadcast" target="_blank" rel="noopener">这里</a>clone。</p><h1 id="1-getInstance"><a href="#1-getInstance" class="headerlink" title="1. getInstance"></a>1. getInstance</h1><p>Java中，一般使用<code>new + 类</code>的方法创建对象。这种可以创建任意数量的对象，且各自独立。</p><p>但在Java仿真模拟中，如果多个class，即多个java程序需要对同一个对象（本例中是全部的Person对象组成的PersonPool这个对象）进行多次操作，可以使用getInstance的方法得到这个唯一恒定对象。</p><p>该方法优点及使用场景：</p><ul><li>全部程序使用同一个对象，避免操作对象选择错误</li><li>对象的定义过程在类的定义过程确定，仿真过程的定义和使用过程完全独立</li><li>基础对象的定义过程，可以与“该对象组合形成的新对象”进行交互（即在定义<code>人</code>的时候，可以定义<code>人</code>与<code>社会</code>进行交互的操作）</li><li>使用场景：仿真程序中，个体形成的整体，可以使用</li></ul><h1 id="2-Constants程序"><a href="#2-Constants程序" class="headerlink" title="2. Constants程序"></a>2. Constants程序</h1><p>该程序没有定义任何操作，只定义了常数。<br>该方法优点：</p><ul><li>可以把与模拟有关的常量提取出来，其他程序使用的时候使用Constants.常量名的方法访问</li><li>验证不同常量对仿真结果的影响时，便于修改常量</li></ul><h1 id="3-可视化"><a href="#3-可视化" class="headerlink" title="3. 可视化"></a>3. 可视化</h1><p>main文件中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var p = new MyPanel();</span><br><span class="line">var panelThread = new Thread(p);</span><br><span class="line">var frame = new JFrame(&quot;疫情模拟&quot;);</span><br><span class="line"></span><br><span class="line">frame.add(p);</span><br><span class="line">frame.setSize(1000, 800);</span><br><span class="line">frame.setLocationRelativeTo(null);</span><br><span class="line">frame.setVisible(true);</span><br><span class="line">frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">panelThread.start();</span><br></pre></td></tr></table></figure><p>这样可以以windows视窗的形式展示仿真过程及结果。</p><p>MyPanel文件中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class MyPanel extends JPanel implements Runnable</span><br></pre></td></tr></table></figure><p>MyPanel继承自JPanel父类及Runnable的接口。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public MyPanel() &#123;</span><br><span class="line">    this.setBackground(new Color(0x444444));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>设置窗口背景颜色。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            this.repaint();</span><br><span class="line"></span><br><span class="line">            try &#123;</span><br><span class="line">                Thread.sleep(100);</span><br><span class="line">                System.out.println(worldTime);</span><br><span class="line">                worldTime++;</span><br><span class="line">            &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>设置窗口更新，worldTime是本次仿真中代表时间流逝的变量，一般仿真都会用到。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void paint(Graphics arg0) &#123;</span><br><span class="line">        super.paint(arg0);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>可以理解为，窗口显示的每一帧，显示什么内容。<br>使用<code>arg0.</code>的方法，为每一帧添加内容。<br>先为arg0.setColor，然后使用arg0.drawRect等功能，即可描绘内容<br>若在此操作中有使用到与时间有关的操作，建议新建一个时间参数，仅在此函数中自加，不要使用worldTime。在实践中一般难以捕捉到worldTime为特定值的时候。可能与多线程有关。</p><h1 id="4-static"><a href="#4-static" class="headerlink" title="4. static"></a>4. static</h1><p>定义静止的变量或函数操作。即使没有实例化某一个类，也可以直接通过<code>类名.变量</code>的方法访问。<br>不同于final，final之后该变量不可改，但static可以改，只是这个变量与类共存，而不依赖于某个对象存在。</p><p>使用场景：</p><ul><li>对于一个类的所有实例，该变量总是一样，而且这个类可能会变</li></ul>]]></content>
     
@@ -66,11 +62,11 @@
       <category term="编程" scheme="https://jfchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
       <category term="仿真" scheme="https://jfchen.top/tags/%E4%BB%BF%E7%9C%9F/"/>
     
       <category term="Java" scheme="https://jfchen.top/tags/Java/"/>
-    
-      <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="学习笔记" scheme="https://jfchen.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
@@ -81,16 +77,13 @@
     <link href="https://jfchen.top/2019/11/30/%E4%B8%80%E4%BA%9B%E4%BD%A0%E6%83%B3%E8%80%8D%E6%B5%81%E6%B0%93%E6%97%B6%EF%BC%8C%E8%83%BD%E5%B8%AE%E4%BD%A0%E4%BC%98%E9%9B%85%E4%B8%80%E7%82%B9%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
     <id>https://jfchen.top/2019/11/30/%E4%B8%80%E4%BA%9B%E4%BD%A0%E6%83%B3%E8%80%8D%E6%B5%81%E6%B0%93%E6%97%B6%EF%BC%8C%E8%83%BD%E5%B8%AE%E4%BD%A0%E4%BC%98%E9%9B%85%E4%B8%80%E7%82%B9%E7%9A%84%E5%B7%A5%E5%85%B7/</id>
     <published>2019-11-30T04:52:51.000Z</published>
-    <updated>2019-12-05T03:19:43.953Z</updated>
+    <updated>2020-02-20T12:24:40.532Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="新浪微热点"><a href="#新浪微热点" class="headerlink" title="新浪微热点 "></a><a href="http://www.wrd.cn/" target="_blank" rel="noopener">新浪微热点 </a></h2><p>提供全网热度<br>提供全网关键词词云</p><h2 id="极其厉害的抠图工具"><a href="#极其厉害的抠图工具" class="headerlink" title="极其厉害的抠图工具"></a><a href="https://www.remove.bg/zh" target="_blank" rel="noopener">极其厉害的抠图工具</a></h2><p>人物抠图十分好用<br>可以在线使用，也可以利用Python，使用他们的API</p>]]></content>
+    <content type="html"><![CDATA[<p>工具工具工具！</p><a id="more"></a><h2 id="新浪微热点"><a href="#新浪微热点" class="headerlink" title="新浪微热点 "></a><a href="http://www.wrd.cn/" target="_blank" rel="noopener">新浪微热点 </a></h2><p>提供全网热度<br>提供全网关键词词云</p><h2 id="极其厉害的抠图工具"><a href="#极其厉害的抠图工具" class="headerlink" title="极其厉害的抠图工具"></a><a href="https://www.remove.bg/zh" target="_blank" rel="noopener">极其厉害的抠图工具</a></h2><p>人物抠图十分好用<br>可以在线使用，也可以利用Python，使用他们的API</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;新浪微热点&quot;&gt;&lt;a href=&quot;#新浪微热点&quot; class=&quot;headerlink&quot; title=&quot;新浪微热点 &quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.wrd.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;新浪微热点 &lt;/a&gt;
-      
+      &lt;p&gt;工具工具工具！&lt;/p&gt;
     
     </summary>
     
@@ -125,9 +118,9 @@
     
       <category term="Python" scheme="https://jfchen.top/tags/Python/"/>
     
-      <category term="工具" scheme="https://jfchen.top/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="工具" scheme="https://jfchen.top/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
