@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Python中使用迭代器的笔记</title>
+      <link href="/2020/02/20/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/02/20/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>今晚在看生成器，貌似在多次循环中可以节省内存。</p><h1 id="1-构造方法"><a href="#1-构造方法" class="headerlink" title="1. 构造方法"></a>1. 构造方法</h1><p>将原本该返回list的，改为返回单个元素，<br>并在构造函数的时候，将<code>return</code>换为<code>yield</code>。</p><p>若需要生成有限个，在构造函数的时候使用如下方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 0</span><br><span class="line">while n &lt; max_value:</span><br><span class="line">    yield n</span><br><span class="line">    n += 1</span><br></pre></td></tr></table></figure><p>若需要生成无限个，在构造函数的时候使用如下方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = 0</span><br><span class="line">while True:</span><br><span class="line">    yield n</span><br><span class="line">    n += 1</span><br></pre></td></tr></table></figure><h1 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h1><p>与普通的直接完整生成一个List不同，含yield的函数访问一次只生成一个元素并返回。<br>构造的生成器函数内有循环，每次访问，运行到yield所在的行后即停止。</p><h1 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3. 使用方法"></a>3. 使用方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for i in gen(5):</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">myGen = gen(5)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line">next(myGen)</span><br><span class="line"># 输出结果</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure><h1 id="4-注意"><a href="#4-注意" class="headerlink" title="4. 注意"></a>4. 注意</h1><ul><li><p>有的地方在教生成器的时候，还在用<code>myGen.next()</code>的方法，在新版Python中已换为函数式<code>next(myGen)</code></p></li><li><p>老教材中说，常用用的<code>for i in range(value)</code>，若value值比较大，可能会造成内存浪费，推荐使用生成器xrange的方法，但在新版Python中，已经没有xrange了，xrange的特性已经集成到range中了，也就是说range(10)和range(10000)都不会造成内存浪费</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用Java编写仿真程序的学习笔记-1</title>
       <link href="/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/02/09/%E4%BD%BF%E7%94%A8Java%E7%BC%96%E5%86%99%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -76,11 +103,11 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> Python </tag>
             
             <tag> 工具 </tag>
+            
+            <tag> 编程 </tag>
             
         </tags>
       
@@ -118,9 +145,9 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 编程 </tag>
             
             <tag> 爬虫 </tag>
             
@@ -131,17 +158,6 @@
     
   
   
-    
-    
-    <entry>
-      <title>Something more about J.F. Chen</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<ul><li><strong>洋文名：</strong> 并没有正式的英文名， 暂时JJJeff吧</li><li><strong>所在地：</strong> 福建 厦门</li><li><strong>职业：</strong> <code>前物理学院学生</code>、<code>现MPAcc学生</code></li><li><strong>喜欢的食物：</strong> 这本菜单上的全部东西</li><li><strong>常用编程语言：</strong> <code>Python</code>、<code>Matlab</code>、<code>(朋友你听过51单片机的汇编语言吗？）</code>、<code>MySQL</code>、<code>Java</code></li><li><strong>兴趣爱好：</strong> 躺着、靠着、给个桌子我也能趴着；平时wzry上上分，关注LOL；小概率隔天跑跑步，以前肯踢足球，现在没鞋了；不想学习时撸两行代码也很快乐</li><li><strong>近期计划：</strong> 求求你让我过了CPA吧</li><li><strong>想学：</strong> <code>Econometrics</code>、<code>建模</code>、<code>统计</code></li><li><strong>想做：</strong> 去成都看大熊猫、去西安看十三朝古都、去潮汕吃火锅、去内蒙古看草原，套马杆也想…</li><li><strong>想吃：</strong> <code>.+</code>（这是一个神奇的正则表达式）</li><li><strong>想说：</strong> 上分喊我、学习喊我、吃饭喊我</li></ul><p>其实我还想说：夏天这么可爱，我想请它吃个饭。如果你有空，你也可以来。</p><p>虽然现在已经到了早晨穿两件都不太够的季节了，但我说这句话的意思就是：<strong>你可以举着勺子开心地跑过来了</strong>。</p>]]></content>
-      
-    </entry>
-    
     
     
     <entry>
@@ -156,11 +172,11 @@
     
     
     <entry>
-      <title>DDDiary</title>
-      <link href="/diary/index.html"/>
-      <url>/diary/index.html</url>
+      <title>Something more about J.F. Chen</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="2019-12-7"><a href="#2019-12-7" class="headerlink" title="2019-12-7"></a>2019-12-7</h1><p>Keep calm and carry on.<br>闷声发大财就好</p><h1 id="2019-12-3"><a href="#2019-12-3" class="headerlink" title="2019-12-3"></a>2019-12-3</h1><p>想吃的火锅还没吃上<br>希望这个冬天可以<br>要么在北京吃铜锅火锅<br>要么在潮汕吃牛肉丸</p><h1 id="2019-11-19"><a href="#2019-11-19" class="headerlink" title="2019-11-19"></a>2019-11-19</h1><p>偷偷给自己放个国庆七天假。<br>期间多次被质疑：你胖到没一条裤子能穿了</p><h1 id="2019-11-13"><a href="#2019-11-13" class="headerlink" title="2019-11-13"></a>2019-11-13</h1><p>宁死不写正经日记</p>]]></content>
+        <content type="html"><![CDATA[<ul><li><strong>洋文名：</strong> 并没有正式的英文名， 暂时JJJeff吧</li><li><strong>所在地：</strong> 福建 厦门</li><li><strong>职业：</strong> <code>前物理学院学生</code>、<code>现MPAcc学生</code></li><li><strong>喜欢的食物：</strong> 这本菜单上的全部东西</li><li><strong>常用编程语言：</strong> <code>Python</code>、<code>Matlab</code>、<code>(朋友你听过51单片机的汇编语言吗？）</code>、<code>MySQL</code>、<code>Java</code></li><li><strong>兴趣爱好：</strong> 躺着、靠着、给个桌子我也能趴着；平时wzry上上分，关注LOL；小概率隔天跑跑步，以前肯踢足球，现在没鞋了；不想学习时撸两行代码也很快乐</li><li><strong>近期计划：</strong> 求求你让我过了CPA吧</li><li><strong>想学：</strong> <code>Econometrics</code>、<code>建模</code>、<code>统计</code></li><li><strong>想做：</strong> 去成都看大熊猫、去西安看十三朝古都、去潮汕吃火锅、去内蒙古看草原，套马杆也想…</li><li><strong>想吃：</strong> <code>.+</code>（这是一个神奇的正则表达式）</li><li><strong>想说：</strong> 上分喊我、学习喊我、吃饭喊我</li></ul><p>其实我还想说：夏天这么可爱，我想请它吃个饭。如果你有空，你也可以来。</p><p>虽然现在已经到了早晨穿两件都不太够的季节了，但我说这句话的意思就是：<strong>你可以举着勺子开心地跑过来了</strong>。</p>]]></content>
       
     </entry>
     
@@ -172,6 +188,17 @@
       <url>/commonweal/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DDDiary</title>
+      <link href="/diary/index.html"/>
+      <url>/diary/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="2019-12-7"><a href="#2019-12-7" class="headerlink" title="2019-12-7"></a>2019-12-7</h1><p>Keep calm and carry on.<br>闷声发大财就好</p><h1 id="2019-12-3"><a href="#2019-12-3" class="headerlink" title="2019-12-3"></a>2019-12-3</h1><p>想吃的火锅还没吃上<br>希望这个冬天可以<br>要么在北京吃铜锅火锅<br>要么在潮汕吃牛肉丸</p><h1 id="2019-11-19"><a href="#2019-11-19" class="headerlink" title="2019-11-19"></a>2019-11-19</h1><p>偷偷给自己放个国庆七天假。<br>期间多次被质疑：你胖到没一条裤子能穿了</p><h1 id="2019-11-13"><a href="#2019-11-13" class="headerlink" title="2019-11-13"></a>2019-11-13</h1><p>宁死不写正经日记</p>]]></content>
       
     </entry>
     
