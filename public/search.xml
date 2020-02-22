@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>测试评论系统</title>
-      <link href="/2020/02/22/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2020/02/22/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<hr><p>title: 测试评论系统<br>date: 2020-02-22 20:24:07<br>tags:</p><p>评论系统整天犯傻<br>今天修理他一下</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Python中使用线程的笔记</title>
       <link href="/2020/02/21/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/02/21/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
@@ -212,9 +199,9 @@
     
     
     <entry>
-      <title>commonweal</title>
-      <link href="/commonweal/index.html"/>
-      <url>/commonweal/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -223,9 +210,9 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>commonweal</title>
+      <link href="/commonweal/index.html"/>
+      <url>/commonweal/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
