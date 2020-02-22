@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jfchen.top/"/>
-  <updated>2020-02-21T15:49:44.565Z</updated>
+  <updated>2020-02-22T12:24:39.660Z</updated>
   <id>https://jfchen.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试评论系统</title>
+    <link href="https://jfchen.top/2020/02/22/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://jfchen.top/2020/02/22/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</id>
+    <published>2020-02-22T12:24:07.517Z</published>
+    <updated>2020-02-22T12:24:39.660Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: 测试评论系统<br>date: 2020-02-22 20:24:07<br>tags:</p><p>评论系统整天犯傻<br>今天修理他一下</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: 测试评论系统&lt;br&gt;date: 2020-02-22 20:24:07&lt;br&gt;tags:&lt;/p&gt;
+&lt;p&gt;评论系统整天犯傻&lt;br&gt;今天修理他一下&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python中使用线程的笔记</title>
@@ -89,11 +114,11 @@
       <category term="编程" scheme="https://jfchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
       <category term="仿真" scheme="https://jfchen.top/tags/%E4%BB%BF%E7%9C%9F/"/>
     
       <category term="Java" scheme="https://jfchen.top/tags/Java/"/>
-    
-      <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="学习笔记" scheme="https://jfchen.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
