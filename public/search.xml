@@ -145,9 +145,9 @@
             
             <tag> Python </tag>
             
-            <tag> 工具 </tag>
-            
             <tag> 编程 </tag>
+            
+            <tag> 工具 </tag>
             
         </tags>
       
@@ -201,17 +201,6 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Something more about J.F. Chen</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -226,6 +215,17 @@
       <title>commonweal</title>
       <link href="/commonweal/index.html"/>
       <url>/commonweal/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
