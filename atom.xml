@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jfchen.top/"/>
-  <updated>2020-02-23T06:36:08.913Z</updated>
+  <updated>2020-02-24T03:58:52.578Z</updated>
   <id>https://jfchen.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://jfchen.top/2020/02/23/Python%E4%B8%AD%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E7%9A%84%E7%AC%94%E8%AE%B0/"/>
     <id>https://jfchen.top/2020/02/23/Python%E4%B8%AD%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E7%9A%84%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-23T06:12:33.000Z</published>
-    <updated>2020-02-23T06:36:08.913Z</updated>
+    <updated>2020-02-24T03:58:52.578Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>日常翻一翻Python Cookbook。<br>今天抽到的是有关优化的部分。</p></blockquote><a id="more"></a><h1 id="1-优化原理"><a href="#1-优化原理" class="headerlink" title="1. 优化原理"></a>1. 优化原理</h1><p>优化运行速度的原理主要有4个：</p><ul><li>针对循环的优化更有意义</li><li>全局变量的检索速度更快</li><li>属性访问（通过<code>.</code>的方式访问）速度会更慢</li><li>Python自带的数据结构是基于C编写的，速度更快</li></ul><h1 id="2-利用局部变量"><a href="#2-利用局部变量" class="headerlink" title="2. 利用局部变量"></a>2. 利用局部变量</h1><ul><li>尽量通过自定义函数的方法，减少main函数中的逻辑处理，因为在自定义函数中的定义的变量是局部变量</li></ul><h1 id="3-减少属性访问"><a href="#3-减少属性访问" class="headerlink" title="3. 减少属性访问"></a>3. 减少属性访问</h1><ul><li><code>from threading import Thread</code>然后直接使用<code>Thread</code>，比<code>import threading</code>然后在程序中多次使用<code>threading.Thread</code>会快很多</li><li>终极必杀技：把属性访问的返回值赋给局部变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">def MySqrt():</span><br><span class="line">    mySqrt = math.sqrt</span><br><span class="line">    for i in range(100000):</span><br><span class="line">        print(mySqrt(i))</span><br></pre></td></tr></table></figure>就能比下面的代码快上不少<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line"></span><br><span class="line">for i in range(100000):</span><br><span class="line">    print(math.sqrt(i))</span><br></pre></td></tr></table></figure></li></ul><h1 id="4-使用内置数据结构"><a href="#4-使用内置数据结构" class="headerlink" title="4. 使用内置数据结构"></a>4. 使用内置数据结构</h1><p>Python中字符串、元组、列表、集合和字典是基于C编写的，只要你还在用Python，就不可能比C更快。<br>所以如无必要，切勿自行创建新的容器。</p><h1 id="5-忌头铁"><a href="#5-忌头铁" class="headerlink" title="5. 忌头铁"></a>5. 忌头铁</h1><p>针对循环优化。<br>从O(n**n)优化到O(nlogn)<br>比优化一个字典的定义方式，省2/3的机器时间要值钱得多。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>日常翻一翻Python Cookbook。<br>今天抽到的是有关优化的部分。</p></blockquote><a id="more"></a><h1 id="1-优化原理"><a href="#1-优化原理" class="headerlink" title="1. 优化原理"></a>1. 优化原理</h1><p>优化运行速度的原理主要有4个：</p><ul><li>针对循环的优化更有意义</li><li>全局变量的检索速度更快</li><li>属性访问（通过<code>.</code>的方式访问）速度会更慢</li><li>Python自带的数据结构是基于C编写的，速度更快</li></ul><h1 id="2-利用局部变量"><a href="#2-利用局部变量" class="headerlink" title="2. 利用局部变量"></a>2. 利用局部变量</h1><ul><li>尽量通过自定义函数的方法，减少main函数中的逻辑处理，因为在自定义函数中的定义的变量是局部变量</li></ul><h1 id="3-减少属性访问"><a href="#3-减少属性访问" class="headerlink" title="3. 减少属性访问"></a>3. 减少属性访问</h1><ul><li><code>from threading import Thread</code>然后直接使用<code>Thread</code>，比<code>import threading</code>然后在程序中多次使用<code>threading.Thread</code>会快很多</li><li>终极必杀技：把属性访问的返回值赋给局部变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">def MySqrt():</span><br><span class="line">    mySqrt = math.sqrt</span><br><span class="line">    for i in range(100000):</span><br><span class="line">        print(mySqrt(i))</span><br></pre></td></tr></table></figure>就能比下面的代码快上不少<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line"></span><br><span class="line">for i in range(100000):</span><br><span class="line">    print(math.sqrt(i))</span><br></pre></td></tr></table></figure></li></ul><h1 id="4-使用内置数据结构"><a href="#4-使用内置数据结构" class="headerlink" title="4. 使用内置数据结构"></a>4. 使用内置数据结构</h1><p>Python中字符串、元组、列表、集合和字典是基于C编写的，只要你还在用Python，就不可能比C更快。<br>所以如无必要，切勿自行创建新的容器。</p><h1 id="5-忌头铁"><a href="#5-忌头铁" class="headerlink" title="5. 忌头铁"></a>5. 忌头铁</h1><p>针对循环优化。<br>从O(n**n)优化到O(nlogn)<br>比优化一个字典的定义方式，省2/3的机器时间要值钱得多。</p><h1 id="6-创建大量的简单实例时使用slots"><a href="#6-创建大量的简单实例时使用slots" class="headerlink" title="6. 创建大量的简单实例时使用slots"></a>6. 创建大量的简单实例时使用<strong>slots</strong></h1><p>在模拟或者其他情况下，可能一个基础的简单类需要创建数万乃至数百万的实例，这时候改用列表或元组以节省内存，然而这么做会使程序丧失易读性。<br>比如<code>person.name</code>就比<code>person[0]</code>看起来直观些。</p><p>这时候可以使用<code>__slots__</code>定义这个类。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Person:</span><br><span class="line">    __slots__=[&apos;name&apos;, &apos;age&apos;, &apos;adress&apos;]</span><br><span class="line">    def __init__(self, name, age, adress):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.adress = adress</span><br></pre></td></tr></table></figure><p>这种方法大概只要普通创建实例所需内存的1/3，但没法添加新属性，也没法多继承。<br>所以如果需要创建大量简单实例，用<code>__slots__</code></p>]]></content>
     
     <summary type="html">
     
@@ -118,11 +118,11 @@
       <category term="编程" scheme="https://jfchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
       <category term="仿真" scheme="https://jfchen.top/tags/%E4%BB%BF%E7%9C%9F/"/>
     
       <category term="Java" scheme="https://jfchen.top/tags/Java/"/>
-    
-      <category term="编程" scheme="https://jfchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="学习笔记" scheme="https://jfchen.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
