@@ -68,7 +68,7 @@
 <meta property="og:site_name" content="Always Hungry">
 <meta property="og:description" content="今晚是连跪的一晚。看看神仙代码吧。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-02T14:42:44.109Z">
+<meta property="og:updated_time" content="2020-03-08T04:28:04.513Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jfchen.top/2020/03/01/Python%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%92%8Cyield%20from%E7%9A%84%E7%AC%94%E8%AE%B0/">
@@ -276,7 +276,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-02 22:42:44" itemprop="dateModified" datetime="2020-03-02T22:42:44+08:00">2020-03-02</time>
+                <time title="Modified: 2020-03-08 12:28:04" itemprop="dateModified" datetime="2020-03-08T12:28:04+08:00">2020-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -310,14 +310,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.8k</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -359,10 +359,11 @@
 <p>我的理解开始：</p>
 <p>主体在于helper函数。</p>
 <p>首先传入长度为max_length的全0列表。<br>start数为0，end数为max_length。</p>
-<p>第一次调用，实际是循环调用了自己max_length次，即创建了对dictionaries进行了max_length次便利的for循环。</p>
+<p>主函数main对这个的helper函数的第一次调用，这个helper实际是循环调用了自己max_length次，即创建了对dictionaries进行了max_length次便利的for循环。</p>
 <p>而且原本传进去的列表参数是全0，但第一次循环过后，变成了全a。</p>
 <p>在最后一层循环里，<code>yield from helper(temp, start + 1, n)</code>这一句中，start + 1 =n了，因此最后一层循环在对temp列表的最后一个元素进行赋值/更改后，调用的helper函数，在if判断里因为<code>start == n</code>，所以会yield出来。</p>
-<p>yield然后有一句return语句，这样下次迭代时从这开始。<br>即可以回到第上一层for循环里，即在最后一层for循环里，选择dictionaries里的下一个字符，赋值给最后temp的最后一位，然后调用helper并yield出去。</p>
+<p>yield然后有一句return语句，这样下次迭代时从这开始。</p>
+<p>主函数main对这个的helper函数的第二次调用，从return开始，这样即可以回到第上一层for循环里，即最后一层for循环里，根据最后一层的for继续遍历dictionaries，选择dictionaries里的下一个字符，赋值给最后temp的最后一位，然后调用helper并yield出去。</p>
 <p>这样就能完成密码最后一位的变化。</p>
 <p>当最后一位变化完一边之后，最后一层的for循环也结束，就回到倒数第二层for循环进行遍历。</p>
 <p>其他层同理。</p>
@@ -376,6 +377,8 @@
 <li><p>本例中是一次循环生成一个结果并输出；但在计算斐波拉契数列的值时，求解下一个值，其实只是求上一个值得步骤+求上上个值的步骤+一个额外步骤，即存在大量的重复计算，此时应当考虑存储每一次计算的结果，供后续计算查询，以节省时间。</p>
 </li>
 </ul>
+<h1 id="练手"><a href="#练手" class="headerlink" title="练手"></a>练手</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">冒泡算法</span><br><span class="line">由于Python中递归层数限制</span><br><span class="line">排序的数字最多为997个</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def bubble(my_list):</span><br><span class="line">    my_length = len(my_list)</span><br><span class="line"></span><br><span class="line">    if my_length == 1:</span><br><span class="line">        yield my_list[-1]</span><br><span class="line">        return  # 递归出口</span><br><span class="line"></span><br><span class="line">    for i in range(my_length - 1):</span><br><span class="line">        former = my_list[i]</span><br><span class="line">        latter = my_list[i + 1]</span><br><span class="line"></span><br><span class="line">        if former &gt; latter:</span><br><span class="line">            my_list[i] = latter</span><br><span class="line">            my_list[i + 1] = former</span><br><span class="line">        else:</span><br><span class="line">            pass</span><br><span class="line"></span><br><span class="line">    yield from bubble(my_list[:-1])  # 递归调用的函数本质是个迭代器，必须使用yield from才能正确进入递归</span><br><span class="line"></span><br><span class="line">    yield my_list[-1]  # 每个递归函数中输出最后一个数，即最大值</span><br><span class="line">    return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">选择排序</span><br><span class="line">这边对数组使用了remove的操作</span><br><span class="line">这种操作仅对数组进行了操作，并且返回为None</span><br><span class="line">所以若使用 c = a.rempve(1)</span><br><span class="line">c将变成None</span><br><span class="line">因此不用设置中间变量c</span><br><span class="line">若要使用也是</span><br><span class="line">a.rempve(1)</span><br><span class="line">c = a</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def selection(my_list):</span><br><span class="line">    my_length = len(my_list)</span><br><span class="line">    max_num = my_list[0]</span><br><span class="line"></span><br><span class="line">    if my_length == 1:</span><br><span class="line">        yield max_num</span><br><span class="line">        return</span><br><span class="line"></span><br><span class="line">    for i in range(1, my_length):</span><br><span class="line">        max_num = my_list[i] if max_num &lt; my_list[i] else max_num</span><br><span class="line"></span><br><span class="line">    my_list.remove(max_num)</span><br><span class="line"></span><br><span class="line">    yield from selection(my_list)</span><br><span class="line"></span><br><span class="line">    yield max_num</span><br><span class="line">    return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    myList = []</span><br><span class="line">    for _ in range(500):</span><br><span class="line">        myList.append(random.randint(0, 1000))</span><br><span class="line">    print(myList)</span><br><span class="line"></span><br><span class="line">    a = bubble(myList)</span><br><span class="line">    b = selection(myList)</span><br><span class="line"></span><br><span class="line">    for _ in range(1000):</span><br><span class="line">        mySort = b</span><br><span class="line">        try:</span><br><span class="line">            print(next(mySort))</span><br><span class="line">        except StopIteration:</span><br><span class="line">            print(&quot;使用&quot; + mySort.__name__ + &quot; sort 排序完毕&quot;)</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
+<p>更改mySort即可变更排序方法</p>
 
     </div>
 
@@ -408,6 +411,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/06/18/%E8%B7%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%B0%8F%E8%AE%B0/" rel="prev" title="跨数据库查询小记">
+                  跨数据库查询小记 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -447,7 +453,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前情介绍"><span class="nav-number">1.</span> <span class="nav-text">前情介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神仙代码来了"><span class="nav-number">3.</span> <span class="nav-text">神仙代码来了</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#yield-from"><span class="nav-number">3.1.</span> <span class="nav-text">yield from</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归算法"><span class="nav-number">3.2.</span> <span class="nav-text">递归算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前情介绍"><span class="nav-number">1.</span> <span class="nav-text">前情介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神仙代码来了"><span class="nav-number">3.</span> <span class="nav-text">神仙代码来了</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#yield-from"><span class="nav-number">3.1.</span> <span class="nav-text">yield from</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归算法"><span class="nav-number">3.2.</span> <span class="nav-text">递归算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练手"><span class="nav-number">5.</span> <span class="nav-text">练手</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -463,7 +469,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -528,7 +534,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">15k</span>
+    <span title="Symbols count total">18k</span>
 </div>
 
         
