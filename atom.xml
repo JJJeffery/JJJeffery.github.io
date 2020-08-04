@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jfchen.top/"/>
-  <updated>2020-06-18T16:14:41.826Z</updated>
+  <updated>2020-08-04T16:27:37.317Z</updated>
   <id>https://jfchen.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工作中会用到的CMD命令--看心情更新版本</title>
+    <link href="https://jfchen.top/2020/07/25/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84CMD%E5%91%BD%E4%BB%A4-%E7%9C%8B%E5%BF%83%E6%83%85%E6%9B%B4%E6%96%B0%E7%89%88%E6%9C%AC/"/>
+    <id>https://jfchen.top/2020/07/25/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84CMD%E5%91%BD%E4%BB%A4-%E7%9C%8B%E5%BF%83%E6%83%85%E6%9B%B4%E6%96%B0%E7%89%88%E6%9C%AC/</id>
+    <published>2020-07-25T14:58:17.000Z</published>
+    <updated>2020-08-04T16:27:37.317Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-查看本文件夹下所有文件（一级）"><a href="#1-查看本文件夹下所有文件（一级）" class="headerlink" title="1.查看本文件夹下所有文件（一级）"></a>1.查看本文件夹下所有文件（一级）</h1><p>dir</p><p>用法：打开CMD，使用cd命令切换目录至工作目录，使用本命令即可罗列出该文件夹下所有一级文件（夹）</p><p>不加 ./b 则可以列出所有一级文件（夹）的详细信息，含创建时间、是否文件夹</p><p>加 ./b 则可以只列出所有一级文件（夹）的命名信息</p><p>加 ./s 则可以只列出所有文件（夹）的命名信息</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-查看本文件夹下所有文件（一级）&quot;&gt;&lt;a href=&quot;#1-查看本文件夹下所有文件（一级）&quot; class=&quot;headerlink&quot; title=&quot;1.查看本文件夹下所有文件（一级）&quot;&gt;&lt;/a&gt;1.查看本文件夹下所有文件（一级）&lt;/h1&gt;&lt;p&gt;dir&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>跨数据库查询小记</title>
@@ -98,14 +121,14 @@
     <link href="https://jfchen.top/2020/02/27/Python%E4%B8%AD%E6%9C%89%E5%85%B3%E8%A7%84%E8%8C%83%E7%9A%84%E7%AC%94%E8%AE%B0/"/>
     <id>https://jfchen.top/2020/02/27/Python%E4%B8%AD%E6%9C%89%E5%85%B3%E8%A7%84%E8%8C%83%E7%9A%84%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-27T05:55:07.000Z</published>
-    <updated>2020-02-28T12:01:46.091Z</updated>
+    <updated>2020-08-04T16:35:08.620Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>一会要上郭老师的课。<br>我现在慌极了。</p></blockquote><a id="more"></a><p>今天翻到的是规范。<br>表示私有的就以下划线开头。最后一列就不翻了</p><h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><table><thead><tr><th>Type</th><th>Public</th><th>Internal</th></tr></thead><tbody><tr><td>Modules</td><td>lower_with_under</td><td>_lower_with_under</td></tr><tr><td>Packages</td><td>lower_with_under</td><td></td></tr><tr><td>Classes</td><td>CapWords</td><td>_CapWords</td></tr><tr><td>Exceptions</td><td>CapWords</td><td></td></tr><tr><td>Functions</td><td>lower_with_under()</td><td>_lower_with_under()</td></tr><tr><td>Global/Class Constants</td><td>CAPS_WITH_UNDER</td><td>_CAPS_WITH_UNDER</td></tr><tr><td>Global/Class Variables</td><td>lower_with_under</td><td>_lower_with_under</td></tr><tr><td>Instance Variables</td><td>lower_with_under</td><td>_lower_with_under (protected) or __lower_with_under (private)</td></tr><tr><td>Method Names</td><td>lower_with_under()</td><td>_lower_with_under() (protected) or __lower_with_under() (private)</td></tr><tr><td>Function/Method Parameters</td><td>lower_with_under</td><td></td></tr><tr><td>Local Variables</td><td>lower_with_under</td><td></td></tr><tr><td>翻译一下给我自己看</td><td></td><td></td></tr><tr><td>Type</td><td>Public</td><td>Internal</td></tr><tr><td>—-</td><td>—-</td><td>—-</td></tr><tr><td>模块</td><td>小写，以下划线连接</td><td>_lower_with_under</td></tr><tr><td>包</td><td>小写，以下划线连接</td><td></td></tr><tr><td>类</td><td>首字母大写</td><td>_CapWords</td></tr><tr><td>异常</td><td>首字母大写</td><td></td></tr><tr><td>函数</td><td>小写，以下划线连接，加上()</td><td>_lower_with_under()</td></tr><tr><td>全局常量/类常量</td><td>大写，以下划线连接</td><td>_CAPS_WITH_UNDER</td></tr><tr><td>全局变量/类变量</td><td>小写，以下划线连接</td><td>_lower_with_under</td></tr><tr><td>实例变量</td><td>小写，以下划线连接</td><td>_lower_with_under (protected) or __lower_with_under (private)</td></tr><tr><td>方法名</td><td>小写，以下划线连接，加上()</td><td>_lower_with_under() (protected) or __lower_with_under() (private)</td></tr><tr><td>函数参数/方法参数</td><td>小写，以下划线连接</td><td></td></tr><tr><td>局部变量</td><td>小写，以下划线连接</td><td></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>代码越写越发现规范的意义</p></blockquote><a id="more"></a><p>今天翻到的是规范。<br>表示私有的就以下划线开头。最后一列就不翻了</p><h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><table><thead><tr><th>Type</th><th>Public</th><th>Internal</th></tr></thead><tbody><tr><td>Modules</td><td>lower_with_under</td><td>_lower_with_under</td></tr><tr><td>Packages</td><td>lower_with_under</td><td></td></tr><tr><td>Classes</td><td>CapWords</td><td>_CapWords</td></tr><tr><td>Exceptions</td><td>CapWords</td><td></td></tr><tr><td>Functions</td><td>lower_with_under()</td><td>_lower_with_under()</td></tr><tr><td>Global/Class Constants</td><td>CAPS_WITH_UNDER</td><td>_CAPS_WITH_UNDER</td></tr><tr><td>Global/Class Variables</td><td>lower_with_under</td><td>_lower_with_under</td></tr><tr><td>Instance Variables</td><td>lower_with_under</td><td>_lower_with_under (protected) or __lower_with_under (private)</td></tr><tr><td>Method Names</td><td>lower_with_under()</td><td>_lower_with_under() (protected) or __lower_with_under() (private)</td></tr><tr><td>Function/Method Parameters</td><td>lower_with_under</td><td></td></tr><tr><td>Local Variables</td><td>lower_with_under</td><td></td></tr><tr><td>翻译一下给我自己看</td><td></td><td></td></tr><tr><td>Type</td><td>Public</td><td>Internal</td></tr><tr><td>—-</td><td>—-</td><td>—-</td></tr><tr><td>模块</td><td>小写，以下划线连接</td><td>_lower_with_under</td></tr><tr><td>包</td><td>小写，以下划线连接</td><td></td></tr><tr><td>类</td><td>首字母大写</td><td>_CapWords</td></tr><tr><td>异常</td><td>首字母大写</td><td></td></tr><tr><td>函数</td><td>小写，以下划线连接，加上()</td><td>_lower_with_under()</td></tr><tr><td>全局常量/类常量</td><td>大写，以下划线连接</td><td>_CAPS_WITH_UNDER</td></tr><tr><td>全局变量/类变量</td><td>小写，以下划线连接</td><td>_lower_with_under</td></tr><tr><td>实例变量</td><td>小写，以下划线连接</td><td>_lower_with_under (protected) or __lower_with_under (private)</td></tr><tr><td>方法名</td><td>小写，以下划线连接，加上()</td><td>_lower_with_under() (protected) or __lower_with_under() (private)</td></tr><tr><td>函数参数/方法参数</td><td>小写，以下划线连接</td><td></td></tr><tr><td>局部变量</td><td>小写，以下划线连接</td><td></td></tr></tbody></table><h1 id="类型规范"><a href="#类型规范" class="headerlink" title="类型规范"></a>类型规范</h1><p>Python最开始让人舒服的是不用事先定义变量，也不用声明变量种类。</p><p>但有时候这种自由会导致一些乱七八糟的结果，这时候就有点想念Java的类型声明了。</p><p>好在Python其实也有变量声明，不过不是强制的，即使错了也能运行，不会报错。</p><p>但IDE会高亮提示，在大型项目中应该还是很有用的。</p><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>在第一次出现变量名的后面加上<code>:类型</code>，比如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name: str</span><br><span class="line">name: str = &apos;Jianfeng Chen&apos;</span><br><span class="line">score: list[float]</span><br><span class="line"></span><br><span class="line">def print_student(name: str, year: int):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure><p>其中，类型可以是自定义的类，也可以是自带的。</p><p>对列表的定义也类似Java，比如需要由整数组成的列表，可以以<code>list[int]</code>表示。</p>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;一会要上郭老师的课。&lt;br&gt;我现在慌极了。&lt;/p&gt;
+&lt;p&gt;代码越写越发现规范的意义&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
