@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jfchen.top/"/>
-  <updated>2020-08-04T16:39:46.635Z</updated>
+  <updated>2020-08-04T16:43:24.701Z</updated>
   <id>https://jfchen.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://jfchen.top/2020/07/25/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84CMD%E5%91%BD%E4%BB%A4-%E7%9C%8B%E5%BF%83%E6%83%85%E6%9B%B4%E6%96%B0%E7%89%88%E6%9C%AC/"/>
     <id>https://jfchen.top/2020/07/25/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84CMD%E5%91%BD%E4%BB%A4-%E7%9C%8B%E5%BF%83%E6%83%85%E6%9B%B4%E6%96%B0%E7%89%88%E6%9C%AC/</id>
     <published>2020-07-25T14:58:17.000Z</published>
-    <updated>2020-08-04T16:39:46.635Z</updated>
+    <updated>2020-08-04T16:43:24.701Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Py大法好<br>但有时候只有CMD…</p></blockquote><h1 id="1-查看本文件夹下所有文件（一级）"><a href="#1-查看本文件夹下所有文件（一级）" class="headerlink" title="1.查看本文件夹下所有文件（一级）"></a>1.查看本文件夹下所有文件（一级）</h1><p>dir</p><p>用法：打开CMD，使用cd命令切换目录至工作目录，使用本命令即可罗列出该文件夹下所有一级文件（夹）</p><p>不加 ./b 则可以列出所有一级文件（夹）的详细信息，含创建时间、是否文件夹</p><p>加 ./b 则可以只列出所有一级文件（夹）的命名信息</p><p>加 ./s 则可以只列出所有文件（夹）的命名信息</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Py大法好<br>但有时候只有CMD…</p></blockquote><h1 id="1-查看本文件夹下所有文件（一级）-dir"><a href="#1-查看本文件夹下所有文件（一级）-dir" class="headerlink" title="1.查看本文件夹下所有文件（一级） - dir"></a>1.查看本文件夹下所有文件（一级） - dir</h1><p>用法：打开CMD，使用cd命令切换目录至工作目录，使用本命令即可罗列出该文件夹下所有一级文件（夹）</p><p>不加 ./b 则可以列出所有一级文件（夹）的详细信息，含创建时间、是否文件夹</p><p>加 ./b 则可以只列出所有一级文件（夹）的命名信息</p><p>加 ./s 则可以只列出所有文件（夹）的命名信息</p>]]></content>
     
     <summary type="html">
     
@@ -32,7 +32,7 @@
         &lt;blockquote&gt;
 &lt;p&gt;Py大法好&lt;br&gt;但有时候只有CMD…&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;1-查看本文件夹下所有文件（一级）&quot;&gt;&lt;a href=&quot;#1-查看本文件夹下所有文件（一级）&quot; class=&quot;headerlink&quot; title=&quot;1.查看
+&lt;h1 id=&quot;1-查看本文件夹下所有文件（一级）-dir&quot;&gt;&lt;a href=&quot;#1-查看本文件夹下所有文件（一级）-dir&quot; class=&quot;headerlink&quot; tit
       
     
     </summary>
