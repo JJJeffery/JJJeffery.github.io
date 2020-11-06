@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jfchen.top/"/>
-  <updated>2020-08-04T16:48:43.598Z</updated>
+  <updated>2020-11-06T14:12:05.524Z</updated>
   <id>https://jfchen.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中优雅的方式列举</title>
+    <link href="https://jfchen.top/2020/11/06/Python%E4%B8%AD%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%88%97%E4%B8%BE/"/>
+    <id>https://jfchen.top/2020/11/06/Python%E4%B8%AD%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%88%97%E4%B8%BE/</id>
+    <published>2020-11-06T13:37:50.000Z</published>
+    <updated>2020-11-06T14:12:05.524Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>道路千万条，安全第一条。<br>虽然有些要求我们可以用奇技淫巧解决。<br>但若能优雅，还请务必优雅。</p></blockquote><a id="more"></a><h1 id="遍历Dataframe"><a href="#遍历Dataframe" class="headerlink" title="遍历Dataframe"></a>遍历Dataframe</h1><h2 id="按行遍历"><a href="#按行遍历" class="headerlink" title="按行遍历"></a>按行遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i, item in office_all_0.iterrows():</span><br><span class="line">    print(item[&apos;name&apos;])</span><br></pre></td></tr></table></figure><p>以(index, Series)遍历Dataframe。<br>i为索引，item为每行数据，可以通过列名<code>name</code>进行数据筛选</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for item in office_all_0.itertuples():</span><br><span class="line">    print(getattr(item, &apos;name&apos;))</span><br></pre></td></tr></table></figure><p>以Namedtuple遍历Dataframe。<br>形如<br><code>Pandas(Index=39509, stk=900949, year=2004, name=&#39;东电B股&#39;, office=&#39;浙江省杭州&#39;, ind=&#39;D44&#39;)</code></p><p>配合<code>getattr</code>进行数据筛选，效率比上一种方法更高。</p><h2 id="按列遍历"><a href="#按列遍历" class="headerlink" title="按列遍历"></a>按列遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for column, item in office_all_0.iteritems():</span><br><span class="line">    print(column)</span><br><span class="line">    print(item[10])</span><br></pre></td></tr></table></figure><p>以(column, Series)遍历Dataframe<br>column为列名，Series为每列数据，通过行数索引可以获取该列任意行数据。</p><h1 id="在可能不存在某个键时查询字典"><a href="#在可能不存在某个键时查询字典" class="headerlink" title="在可能不存在某个键时查询字典"></a>在可能不存在某个键时查询字典</h1><p>不用额外判断字典中是否存在该键。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dic.get(&apos;key&apos;, &apos;value_if_default&apos;)</span><br></pre></td></tr></table></figure><p>直接查询字典dic中key对应的值，若不存在，则返回<code>value_if_default</code>，若存在则返回正常值。<br>若未指定<code>value_if_default</code>，则返回<code>None</code>，而不会报错。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;道路千万条，安全第一条。&lt;br&gt;虽然有些要求我们可以用奇技淫巧解决。&lt;br&gt;但若能优雅，还请务必优雅。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://jfchen.top/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://jfchen.top/tags/Python/"/>
+    
+      <category term="笔记" scheme="https://jfchen.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>工作中会用到的CMD命令--看心情更新版本</title>
@@ -56,9 +83,9 @@
       <category term="MySQL" scheme="https://jfchen.top/categories/MySQL/"/>
     
     
-      <category term="MySQL" scheme="https://jfchen.top/tags/MySQL/"/>
-    
       <category term="笔记" scheme="https://jfchen.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://jfchen.top/tags/MySQL/"/>
     
   </entry>
   
@@ -108,9 +135,9 @@
       <category term="MySQL" scheme="https://jfchen.top/categories/MySQL/"/>
     
     
-      <category term="MySQL" scheme="https://jfchen.top/tags/MySQL/"/>
-    
       <category term="笔记" scheme="https://jfchen.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://jfchen.top/tags/MySQL/"/>
     
   </entry>
   
