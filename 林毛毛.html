@@ -1,3 +1,25 @@
+<script type="text/javascript">   
+function password() {   
+var testV = 1;   
+var pass1 = prompt('说！你是猪！','');   
+while (testV < 3) {   
+if (!pass1)   
+history.go(-1);   
+if (pass1 == "我是猪") {//初始密码123   
+alert('你就是一颗大山竹');   
+break;   
+}   
+testV+=1;   
+var pass1 =   
+prompt('请说“我是猪”');   
+}   
+if (pass1!="password" & testV ==10)   
+history.go(-1);   
+return " ";   
+}   
+document.write(password());   
+</script>  
+<!--下面添加你要显示的内容或者代码-->
 <br>
 <br>
 <br>
