@@ -1,5 +1,49 @@
 
-<div class="text" style=" text-align:center;"><font size=5>MD一头猪</font></div>
+<!-- <div class="text" style=" text-align:center;"><font size=5>MD一头猪</font></div> -->
+
+<br>
+<br>
+<br>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+ 
+</head>
+ 
+<body>
+ 
+<DIV id="CountMsg" class="HotDate" style=" text-align:center;">
+<font size=5>
+<span id="td">-天</span>
+<span id="th">-时</span>
+<span id="tm">-分</span>
+<span id="ts">-秒</span>
+</font>
+</DIV>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/11/28 14:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+ 
+var d=Math.floor(t/1000/60/60/24);
+var h=Math.floor(t/1000/60/60%24);
+var m=Math.floor(t/1000/60%60);
+var s=Math.floor(t/1000%60);
+ 
+document.getElementById("td").innerHTML = d + "天";
+document.getElementById("th").innerHTML = h + "时";
+document.getElementById("tm").innerHTML = m + "分";
+document.getElementById("ts").innerHTML = s + "秒";
+}
+setInterval(getRTime,1000);
+</script>
+</body>
+</html>
+<br>
+<br>
+<br>
 <div class="text" style=" text-align:center;"><font size=5>MD一头猪</font></div>
 <div class="text" style=" text-align:center;"><font size=5>MD一头猪</font></div>
 <div class="text" style=" text-align:center;"><font size=5>MD一头猪</font></div>
